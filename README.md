@@ -10,3 +10,9 @@
 스마트폰
 1. 시계 현재 시간
 2. 손목시계 현재 위치 받아오기(BT)
+
+## Update
+
+Project migrate
+Nontification Push
+
