@@ -18,6 +18,7 @@
     <string name="ble_not_supported">BLE is not supported</string>
     <string name="label_data">Data:</string>
     <string name="nonpush_data">push Data</string>
+    <string name="read_data">read Data</string>
     <string name="label_device_address">Device address:</string>
     <string name="label_state">State:</string>
     <string name="no_data">No data</string>

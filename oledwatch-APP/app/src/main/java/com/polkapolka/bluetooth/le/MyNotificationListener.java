@@ -32,17 +32,31 @@ public class MyNotificationListener extends NotificationListenerService {
         String title = extras.getString(Notification.EXTRA_TITLE);
         CharSequence text = extras.getCharSequence(Notification.EXTRA_TEXT);
         CharSequence subText = extras.getCharSequence(Notification.EXTRA_SUB_TEXT);
-    //    Icon smallIcon = notification.getSmallIcon();
+     //   Icon smallIcon = notification.getSmallIcon();
      //   Icon largeIcon = notification.getLargeIcon();
 
-        Log.d("CatchBug" , "onNotificationPosted ~ " +
+        switch (sbn.getPackageName()){
+            case "com.kakao.talk":
+                if(sbn.getId()==2 && subText==null) {
+                    Toast.makeText(this, "kakao msg : " + title + " / " + text, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case "com.samsung.android.incallui":
+                Toast.makeText(this, "call : "+ title, Toast.LENGTH_SHORT).show();
+                break;
+            case "com.samsung.android.messaging":
+                Toast.makeText(this, "msg : "+title+" / "+text, Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+
+        Log.d("MSGBug" , "onNotificationPosted ~ " +
                 " packageName: " + sbn.getPackageName() +
                 " id: " + sbn.getId() +
                 " postTime: " + sbn.getPostTime() +
                 " title: " + title +
                 " text : " + text +
                 " subText: " + subText);
-
     }
 
 }

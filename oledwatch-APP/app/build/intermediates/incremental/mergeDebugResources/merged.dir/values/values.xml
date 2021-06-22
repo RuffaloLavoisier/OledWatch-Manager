@@ -24,6 +24,7 @@
     <string name="menu_stop">Stop</string>
     <string name="no_data">No data</string>
     <string name="nonpush_data">push Data</string>
+    <string name="read_data">read Data</string>
     <string name="red_slide">Red</string>
     <string name="title_devices">BLE Device Scan</string>
     <string name="unknown_characteristic">Unknown characteristic</string>

@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright (C) 2013 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -79,9 +80,8 @@ public class DeviceScanActivity extends ListActivity {
             finish();
             return;
         }
-
         startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));// 접근 권한
-
+        Log.d("CatchBug", "On create");
     }
 
 
@@ -105,6 +105,7 @@ public class DeviceScanActivity extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_scan:
+                Log.d("bug", "in");
                 mLeDeviceListAdapter.clear();
                 scanLeDevice(true);
                 break;
@@ -167,6 +168,8 @@ public class DeviceScanActivity extends ListActivity {
 
     private void scanLeDevice(final boolean enable) {
         if (enable) {
+
+            Log.d("bug", "enable");
             // Stops scanning after a pre-defined scan period.
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -201,6 +204,7 @@ public class DeviceScanActivity extends ListActivity {
             if(!mLeDevices.contains(device)) {
                 mLeDevices.add(device);
             }
+
         }
 
         public BluetoothDevice getDevice(int position) {
@@ -236,19 +240,25 @@ public class DeviceScanActivity extends ListActivity {
                 viewHolder.deviceAddress = (TextView) view.findViewById(R.id.device_address);
                 viewHolder.deviceName = (TextView) view.findViewById(R.id.device_name);
                 view.setTag(viewHolder);
+                Log.d("CatchBug", "Hi");
             } else {
+                Log.d("CatchBug", "Hello");
+
                 viewHolder = (ViewHolder) view.getTag();
+
             }
 
             BluetoothDevice device = mLeDevices.get(i);
             final String deviceName = device.getName();
+            Log.d("bug","name : "+ deviceName );
             if (deviceName != null && deviceName.length() > 0)
                 viewHolder.deviceName.setText(deviceName);
             else
                 viewHolder.deviceName.setText(R.string.unknown_device);
             viewHolder.deviceAddress.setText(device.getAddress());
-
+            Log.d("bug", "address : "+device.getAddress());
             return view;
+
         }
     }
 
@@ -261,7 +271,10 @@ public class DeviceScanActivity extends ListActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+
                     mLeDeviceListAdapter.addDevice(device);
+                   // Toast.makeText(DeviceScanActivity.this, "search name : "+ device, Toast.LENGTH_SHORT).show();
+                    Log.d("bug","search name : "+ device);
                     mLeDeviceListAdapter.notifyDataSetChanged();
                 }
             });

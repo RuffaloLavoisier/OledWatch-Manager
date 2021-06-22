@@ -23,7 +23,7 @@
 22-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:21:5-22:46
 23        android:minSdkVersion="18"
 23-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:21:15-41
-24        android:targetSdkVersion="18" />
+24        android:targetSdkVersion="30" />
 24-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:22:15-44
 25    <!--
 26    Declare this required feature if you want to make the app available to BLE-capable
@@ -44,63 +44,69 @@
 36    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 36-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:30:5-73
 36-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:30:22-71
-37
-38    <application
-38-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:32:5-55:19
-39        android:debuggable="true"
-40        android:icon="@mipmap/ic_watch"
-40-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:33:18-49
-41        android:label="@string/app_name"
-41-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:32:18-50
-42        android:roundIcon="@mipmap/ic_watch_round"
-42-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:34:18-60
-43        android:testOnly="true"
-44        android:theme="@android:style/Theme.Holo.Light" >
-44-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:35:18-65
-45        <activity
-45-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:36:9-42:20
-46            android:name="com.polkapolka.bluetooth.le.DeviceScanActivity"
-46-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:36:19-53
-47            android:label="@string/app_name" >
-47-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:37:19-51
-48            <intent-filter>
-48-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:38:13-41:29
-49                <action android:name="android.intent.action.MAIN" />
-49-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:39:17-68
-49-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:39:25-66
-50
-51                <category android:name="android.intent.category.LAUNCHER" />
-51-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:40:17-76
-51-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:40:27-74
-52            </intent-filter>
-53        </activity>
-54        <activity android:name="com.polkapolka.bluetooth.le.DeviceControlActivity" />
-54-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:43:9-58
-54-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:43:19-56
-55
-56        <service
-56-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:45:9-77
-57            android:name="com.polkapolka.bluetooth.le.BluetoothLeService"
-57-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:45:18-52
-58            android:enabled="true" />
-58-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:45:53-75
-59        <service
-59-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:46:9-54:19
-60            android:name="com.polkapolka.bluetooth.le.MyNotificationListener"
-60-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:47:13-51
-61            android:enabled="true"
-61-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:48:13-35
-62            android:label="My Notification Listener"
-62-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:49:13-53
-63            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-63-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:50:13-87
-64            <intent-filter>
-64-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:51:13-53:29
-65                <action android:name="android.service.notification.NotificationListenerService" />
-65-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:52:17-99
-65-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:52:25-96
-66            </intent-filter>
-67        </service>
-68    </application>
-69
-70</manifest>
+37    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+37-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:31:5-79
+37-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:31:22-76
+38    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+38-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:32:5-81
+38-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:32:22-78
+39
+40    <application
+40-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:34:5-57:19
+41        android:debuggable="true"
+42        android:icon="@mipmap/ic_watch"
+42-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:35:18-49
+43        android:label="@string/app_name"
+43-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:34:18-50
+44        android:roundIcon="@mipmap/ic_watch_round"
+44-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:36:18-60
+45        android:testOnly="true"
+46        android:theme="@android:style/Theme.Holo.Light" >
+46-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:37:18-65
+47        <activity
+47-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:38:9-44:20
+48            android:name="com.polkapolka.bluetooth.le.DeviceScanActivity"
+48-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:38:19-53
+49            android:label="@string/app_name" >
+49-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:39:19-51
+50            <intent-filter>
+50-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:40:13-43:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:41:17-68
+51-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:41:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:42:17-76
+53-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:42:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity android:name="com.polkapolka.bluetooth.le.DeviceControlActivity" />
+56-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:45:9-58
+56-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:45:19-56
+57
+58        <service
+58-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:47:9-77
+59            android:name="com.polkapolka.bluetooth.le.BluetoothLeService"
+59-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:47:18-52
+60            android:enabled="true" />
+60-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:47:53-75
+61        <service
+61-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:48:9-56:19
+62            android:name="com.polkapolka.bluetooth.le.MyNotificationListener"
+62-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:49:13-51
+63            android:enabled="true"
+63-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:50:13-35
+64            android:label="My Notification Listener"
+64-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:51:13-53
+65            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+65-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:52:13-87
+66            <intent-filter>
+66-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:53:13-55:29
+67                <action android:name="android.service.notification.NotificationListenerService" />
+67-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:54:17-99
+67-->C:\Users\jsh97\AndroidStudioProjects\BT4LEDTest1\app\src\main\AndroidManifest.xml:54:25-96
+68            </intent-filter>
+69        </service>
+70    </application>
+71
+72</manifest>

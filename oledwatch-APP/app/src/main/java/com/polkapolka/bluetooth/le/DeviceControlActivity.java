@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.UUID;
 
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 /**
  * For a given BLE device, this Activity provides the user interface to connect, display data,
@@ -102,10 +103,12 @@ public class DeviceControlActivity extends Activity {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
+                Toast.makeText(context, "Connected", Toast.LENGTH_SHORT).show();
                 updateConnectionState(R.string.connected);
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
+                Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT).show();
                 updateConnectionState(R.string.disconnected);
                 invalidateOptionsMenu();
                 clearUI();
