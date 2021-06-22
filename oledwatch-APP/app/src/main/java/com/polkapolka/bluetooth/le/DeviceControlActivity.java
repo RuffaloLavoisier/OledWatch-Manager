@@ -58,11 +58,11 @@ public class DeviceControlActivity extends Activity {
     private SeekBar mRed,mGreen,mBlue;
     private String mDeviceName;
     private String mDeviceAddress;
-  //  private ExpandableListView mGattServicesList;
-    private BluetoothLeService mBluetoothLeService;
-     private boolean mConnected = false;
-    private BluetoothGattCharacteristic characteristicTX;
-    private BluetoothGattCharacteristic characteristicRX;
+    //  private ExpandableListView mGattServicesList;
+    private static BluetoothLeService mBluetoothLeService;
+    private static boolean mConnected = false;
+    private static BluetoothGattCharacteristic characteristicTX;
+    private static BluetoothGattCharacteristic characteristicRX;
 
 
     public final static UUID HM_RX_TX =
@@ -108,7 +108,7 @@ public class DeviceControlActivity extends Activity {
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
-                Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Disonnected", Toast.LENGTH_SHORT).show();
                 updateConnectionState(R.string.disconnected);
                 invalidateOptionsMenu();
                 clearUI();
@@ -283,9 +283,10 @@ public class DeviceControlActivity extends Activity {
         });
     }
     // on change of bars write char 
-    private void makeChange() {
-    	 String str = RGBFrame[0] + "," + RGBFrame[1] + "," + RGBFrame[2] + "\n";
-         Log.d(TAG, "Sending result=" + str);
+    static void makeChange() {
+       // String str = RGBFrame[0] + "," + RGBFrame[1] + "," + RGBFrame[2] + "\n";
+        String str =MyNotificationListener.send_msg+"";
+         Log.d("bug", "Sending result=" + str);
 		 final byte[] tx = str.getBytes();
 		 if(mConnected) {
 		    characteristicTX.setValue(tx);
