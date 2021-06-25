@@ -160,4 +160,10 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:max="255" />
+
+    <Switch
+        android:id="@+id/CallBuzzer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Watch Finder" />
 </LinearLayout>

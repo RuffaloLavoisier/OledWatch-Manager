@@ -285,7 +285,7 @@ public class DeviceControlActivity extends Activity {
     // on change of bars write char 
     static void makeChange() {
        // String str = RGBFrame[0] + "," + RGBFrame[1] + "," + RGBFrame[2] + "\n";
-        String str =MyNotificationListener.send_msg+"";
+        String str = "#"+MyNotificationListener.send_msg+"@";
          Log.d("bug", "Sending result=" + str);
 		 final byte[] tx = str.getBytes();
 		 if(mConnected) {

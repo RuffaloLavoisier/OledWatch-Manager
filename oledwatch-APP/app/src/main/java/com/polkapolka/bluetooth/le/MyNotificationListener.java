@@ -21,7 +21,8 @@ public class MyNotificationListener extends NotificationListenerService {
     @Override
     public void onNotificationRemoved(StatusBarNotification sbn) {
         super.onNotificationRemoved(sbn);
-
+        send_msg = 0 ;
+        DeviceControlActivity.makeChange();
         Log.d("bug", "onNotificationRemoved ~ " +
                 " packageName: " + sbn.getPackageName() +
                 " id: " + sbn.getId());
@@ -40,23 +41,29 @@ public class MyNotificationListener extends NotificationListenerService {
      //   Icon smallIcon = notification.getSmallIcon();
      //   Icon largeIcon = notification.getLargeIcon();
 
+        // Output Toast message
         switch (sbn.getPackageName()){
             case "com.kakao.talk":
-                if(sbn.getId()==2 && subText==null) {
+                if(sbn.getId()==2 && subText==null) {   //
                     Toast.makeText(this, "kakao msg : " + title + " / " + text, Toast.LENGTH_SHORT).show();
                     send_msg=1;
+                    DeviceControlActivity.makeChange();
                 }
                 break;
             case "com.samsung.android.incallui":
                 Toast.makeText(this, "call : "+ title, Toast.LENGTH_SHORT).show();
                 send_msg=2;
+                DeviceControlActivity.makeChange();
+
                 break;
             case "com.samsung.android.messaging":
                 Toast.makeText(this, "msg : "+ title +" / "+ text, Toast.LENGTH_SHORT).show();
                 send_msg=3;
+                DeviceControlActivity.makeChange();
                 break;
         }
-        DeviceControlActivity.makeChange();
+
+        // Log Output
         Log.d("MSGBug" , "onNotificationPosted ~ " +
                 " packageName: " + sbn.getPackageName() +
                 " id: " + sbn.getId() +
