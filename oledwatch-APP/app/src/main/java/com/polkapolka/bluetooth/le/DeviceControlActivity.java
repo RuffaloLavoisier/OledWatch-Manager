@@ -268,13 +268,11 @@ public class DeviceControlActivity extends Activity {
         	   public void onProgressChanged(SeekBar seekBar, int progress, 
         	     boolean fromUser) { 
         			RGBFrame[pos]=progress;
-        		} 
-
+        		}
         	   @Override 
         	   public void onStartTrackingTouch(SeekBar seekBar) { 
         	    // TODO Auto-generated method stub 
-        	   } 
-
+        	   }
         	   @Override 
         	   public void onStopTrackingTouch(SeekBar seekBar) { 
         	    // TODO Auto-generated method stub 
