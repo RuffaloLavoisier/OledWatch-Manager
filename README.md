@@ -8,6 +8,10 @@ About Wiki Page : [wiki-page](https://github.com/RuffaloLavoisier/OledWatch-Wiki
 
 About Device : [device](https://github.com/RuffaloLavoisier/OledWatch-Device)
 
+### About Android Guide
+
+[여기를](https://ruffalolavoisier.github.io/OledWatch-Wiki/app/) 보면 안드로이드와 디바이스 간 연동하는 것에 관한 가이드와 설명 페이지가 갖추어져 있습니다.
+
 ## Feature(plan)
 
 1. 손목시계와 연결하기  
