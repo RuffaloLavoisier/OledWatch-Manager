@@ -1,6 +1,6 @@
-# sunghwan watch Android
+# Sunghwan OledWatch Android Application
 
-Olwd-Watch 와 연동되는 Companion App 입니다.   
+OlwdWatch와 연동되는 Companion App 입니다.   
 
 ## Accessories
 
