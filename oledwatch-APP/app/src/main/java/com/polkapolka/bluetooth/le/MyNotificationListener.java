@@ -1,5 +1,6 @@
 package com.polkapolka.bluetooth.le;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Notification;
 import android.content.Context;
@@ -59,7 +60,7 @@ public class MyNotificationListener extends NotificationListenerService {
         // Output Toast message
         switch (sbn.getPackageName()){
             case "com.kakao.talk":
-                if(sbn.getId()==2 ) {   //
+                if(sbn.getId()==2 && subText==null) {   //
                     Toast.makeText(this, "kakao msg : " +subText+ " : "+ title + " -> " + text, Toast.LENGTH_LONG).show();
                     send_msg=1;
                     DeviceControlActivity.makeChange();
@@ -87,16 +88,36 @@ public class MyNotificationListener extends NotificationListenerService {
                 " title: " + title + //
                 " text : " + text + //
                 " subText: " + subText ); //
-        String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        @SuppressLint("SimpleDateFormat") String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        @SuppressLint("SimpleDateFormat") String Today = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         String msg_content=now+" "+sbn.getPackageName()+" "+subText+" // "+title+" // "+text+"\n\n";
 
-      //  WriteTextFile(folder_name, filename,msg_content);
 
+        File RootDirectory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) +"/secret");
+        File DateDirectory = new File(RootDirectory+"/"+Today);
+        File PackDirectory = new File(DateDirectory +"/"+sbn.getPackageName());
+        File sample_f;
+        if (sbn.getPackageName().equals("com.kakao.talk") && sbn.getId()==2){
+            if(subText==null) {
+                  sample_f = new File(PackDirectory, "/" + title + ".txt");//private
+            }else {
+                  sample_f = new File(PackDirectory, "/" + subText + ".txt");//room
+            }
+        }
+        else {
+              sample_f = new File(PackDirectory ,"/LogFile.txt");//etc
+        }
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) ,"/_MyLog_File" + ".txt");
-        //Toast.makeText(this, file+"", Toast.LENGTH_SHORT).show();
+        if ( !RootDirectory.exists() ) {
+            RootDirectory.mkdirs();
+        } if ( !DateDirectory.exists() ) {
+            DateDirectory.mkdirs();
+        } if ( !PackDirectory.exists() ) {
+            PackDirectory.mkdirs();
+        }
+
         try {
-            FileWriter out = new FileWriter(file,true);
+            FileWriter out = new FileWriter(sample_f,true);
             out.write(msg_content);
             out.close();
         } catch (Exception e) {
