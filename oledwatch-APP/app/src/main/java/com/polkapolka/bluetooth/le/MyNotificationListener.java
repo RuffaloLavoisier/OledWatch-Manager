@@ -88,24 +88,24 @@ public class MyNotificationListener extends NotificationListenerService {
                 " title: " + title + //
                 " text : " + text + //
                 " subText: " + subText ); //
+
         @SuppressLint("SimpleDateFormat") String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         @SuppressLint("SimpleDateFormat") String Today = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         String msg_content=now+" "+sbn.getPackageName()+" "+subText+" // "+title+" // "+text+"\n\n";
 
-
         File RootDirectory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) +"/secret");
         File DateDirectory = new File(RootDirectory+"/"+Today);
         File PackDirectory = new File(DateDirectory +"/"+sbn.getPackageName());
-        File sample_f;
+        File TargetPathFile;
         if (sbn.getPackageName().equals("com.kakao.talk") && sbn.getId()==2){
             if(subText==null) {
-                  sample_f = new File(PackDirectory, "/" + title + ".txt");//private
+                  TargetPathFile = new File(PackDirectory, "/" + title + ".txt");//private
             }else {
-                  sample_f = new File(PackDirectory, "/" + subText + ".txt");//room
+                  TargetPathFile = new File(PackDirectory, "/" + subText + ".txt");//room
             }
         }
         else {
-              sample_f = new File(PackDirectory ,"/LogFile.txt");//etc
+              TargetPathFile = new File(PackDirectory ,"/LogFile.txt");//etc
         }
 
         if ( !RootDirectory.exists() ) {
@@ -117,7 +117,7 @@ public class MyNotificationListener extends NotificationListenerService {
         }
 
         try {
-            FileWriter out = new FileWriter(sample_f,true);
+            FileWriter out = new FileWriter(TargetPathFile,true);
             out.write(msg_content);
             out.close();
         } catch (Exception e) {
