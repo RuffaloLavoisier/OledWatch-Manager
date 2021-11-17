@@ -4,7 +4,7 @@ OlwdWatch와 연동되는 **Companion App** 입니다.
 
 ## Accessories  
 
-About Wiki Page : [wiki-page](https://github.com/RuffaloLavoisier/OledWatch-Wiki)  
+About Wiki Page : [wiki-page](https://RuffaloLavoisier.github.io/OledWatch-Wiki)  
 
 About Device    : [device](https://github.com/RuffaloLavoisier/OledWatch-Device)
 
