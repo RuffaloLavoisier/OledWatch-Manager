@@ -10,22 +10,22 @@ About Device    : [device](https://github.com/RuffaloLavoisier/OledWatch-Device)
 
 ### About Android Guide
 
-<img src="img/oledwatch.jpg" height=320px width=450px>  
+<img align="center" style="margin-left: auto; margin-right: auto; display: block;" src="img/oledwatch.jpg" height=320px width=450px>  
 
 [여기를](https://ruffalolavoisier.github.io/OledWatch-Wiki/Developer/deviceApp/) 보면 안드로이드와 손목시계 디바이스가 연동하는 것에 관한 가이드와 설명 페이지가 갖추어져 있습니다.
 
 ## APP
 
-<img src="img/app.jpg" height=320px width=250px>  
+<img align="center" style="margin-left: auto; margin-right: auto; display: block;" src="img/app.jpg" height=320px width=250px>  
 
 >1. 앱을 실행합니다.  
 
-<img src="img/access.jpg" height=320px width=450px>  
+<img align="center" style="margin-left: auto; margin-right: auto; display: block;" src="img/access.jpg" height=320px width=450px>  
 
 >2. 메신저 알림을 읽기 위해서는 **앱 접근 권한**이 필요합니다.  
 >* 추가로 **위치 권한** (Location Permission)허용이 필요합니다.  
 
-<img src="img/list.jpg" height=420px width=450px>  
+<img align="center" style="margin-left: auto; margin-right: auto; display: block;" src="img/list.jpg" height=420px width=450px>  
 
 >3. 블루투스 검색 목록에서 해당하는 디바이스를 찾아서 연결합니다.  
 
